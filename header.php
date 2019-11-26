@@ -1,6 +1,6 @@
 <!--Barra de navegacion-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded">
-    <a href="index.html" class="navbar-brand">
+    <a href="index.php" class="navbar-brand">
         <img src="images/logo.svg" width="40" height="40" alt="logo" />
         Marca
     </a>
