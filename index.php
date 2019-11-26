@@ -10,6 +10,9 @@
   <!--Bootstrap-->
   <!--Estilos propios-->
   <link rel="stylesheet" href="./styles/style.css" />
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="./styles/font_awesome/css/all.css" />
+  <!-- Font awsome -->
   <title>Home</title>
 </head>
 
