@@ -105,15 +105,9 @@
         <!-- Social buttons -->
         <h5 class="font-weight-bold text-uppercase mb-4">SEGUINOS</h5>
 
-        <!-- Facebook -->
-        <a type="button" class="btn-floating btn-fb">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <!-- Twitter -->
-        <a type="button" class="btn-floating btn-tw">
-          <i class="fab fa-twitter"></i>
-        </a>
+        <div id="iconos">
 
+        </div>
       </div>
       <!-- Grid column -->
 
