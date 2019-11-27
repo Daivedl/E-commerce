@@ -106,7 +106,15 @@
         <h5 class="font-weight-bold text-uppercase mb-4">SEGUINOS</h5>
 
         <div id="iconos">
-
+          <!--Twitter-->
+          <a href="#" class="p-1">
+            <img src="./images/tw.svg" alt="logo_tw" width="40" height="40">
+          </a>
+          <!--Twitter-->
+          <!-- facebook -->
+          <a href="#" class="p-1">
+            <img src="./images/fb.svg" alt="face_logo" width="40" height="40">
+          </a>
         </div>
       </div>
       <!-- Grid column -->

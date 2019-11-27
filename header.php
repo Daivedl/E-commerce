@@ -1,7 +1,7 @@
 <!--Barra de navegacion-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+<nav class="navbar navbar-expand-lg navbar-light bg-ligth rounded">
     <a href="index.php" class="navbar-brand">
-        <img src="images/logo.svg" width="40" height="40" alt="logo" />
+        <img src="images/logo.svg" width="60" height="60" alt="logo" />
         Marca
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,3 +59,20 @@
     </ul>
 </nav>
 <!--Fin de categorias-->
+<!-- Descuentos-->
+<div class="container-fluid bg-secondary">
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">
+                <img src="./images/enviado_blanco.svg" width="60" height="60" alt="">
+                Envio gratis</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">Descuento universitarios</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">Mas descuentos</a>
+        </li>
+    </ul>
+</div>
+<!-- Fin descuentos-->
