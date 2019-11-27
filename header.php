@@ -64,14 +64,18 @@
     <ul class="nav justify-content-center">
         <li class="nav-item">
             <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">
-                <img src="./images/enviado_blanco.svg" width="60" height="60" alt="">
+                <img src="./images/camion.svg" width="30" height="30" alt="">
                 Envio gratis</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">Descuento universitarios</a>
+            <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">
+                <img src="./images/descuento.svg" width="30" height="30" alt="">
+                Descuento universitarios</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">Mas descuentos</a>
+            <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">
+                <img src="./images/porc.svg" width="30" height="30" alt="">
+                Mas descuentos</a>
         </li>
     </ul>
 </div>
