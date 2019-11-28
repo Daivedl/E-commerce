@@ -60,7 +60,7 @@
 </nav>
 <!--Fin de categorias-->
 <!-- Descuentos-->
-<div class="container-fluid bg-secondary">
+<div class="container-fluid bg-secondary rounded mb-1 mt-1">
     <ul class="nav justify-content-center">
         <li class="nav-item">
             <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">
