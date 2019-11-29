@@ -1,3 +1,11 @@
+<?php
+$detect = new Mobile_Detect();
+if ($detect->isMobile()) {
+    $logo = 20;
+} else {
+    $logo = 40;
+}
+?>
 <!--Barra de navegacion-->
 <nav class="navbar navbar-expand-lg navbar-light bg-ligth rounded">
     <a href="index.php" class="navbar-brand">
@@ -60,23 +68,21 @@
 </nav>
 <!--Fin de categorias-->
 <!-- Descuentos-->
-<div class="container-fluid bg-secondary rounded mb-1 mt-1">
-    <ul class="nav justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">
-                <img src="./images/camion.svg" width="30" height="30" alt="">
-                Envio gratis</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">
-                <img src="./images/descuento.svg" width="30" height="30" alt="">
-                Descuento universitarios</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">
-                <img src="./images/porc.svg" width="30" height="30" alt="">
-                Mas descuentos</a>
-        </li>
-    </ul>
+<div class="container-fluid text-center  rounded mb-1 mt-1 pb-1 pt-1">
+    <div class="row">
+        <div class="col-sm">
+            <img src="./images/camion.svg" width="<?= $logo ?>" height="<?= $logo ?>" alt="">
+            Envio gratis
+        </div>
+        <div class="col-sm">
+            <img src="./images/descuento.svg" width="<?= $logo ?>" height="<?= $logo ?>" alt="">
+            Descuento universitarios
+        </div>
+        <div class="col-sm">
+            <img src="./images/porc.svg" width="<?= $logo ?>" height="<?= $logo ?>" alt="">
+            Más descuentos
+        </div>
+    </div>
+
 </div>
 <!-- Fin descuentos-->
