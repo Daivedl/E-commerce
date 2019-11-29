@@ -10,10 +10,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a href="" class="nav-link">Home</a>
+                <a href="index.php" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link">FAQ</a>
+                <a href="faq.php" class="nav-link">FAQ</a>
             </li>
             <li class="nav-item">
                 <a href="" class="nav-link">Registro</a>
@@ -22,7 +22,7 @@
                 <a href="" class="nav-link">Login</a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link">Contacto</a>
+                <a href="contact.php" class="nav-link">Contacto</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0 ml-auto">
