@@ -49,17 +49,17 @@
         <ul class="list-unstyled">
           <li>
             <p>
-              <a href="#!">Home</a>
+              <a href="index.php">Home</a>
             </p>
           </li>
           <li>
             <p>
-              <a href="#!">F.A.Q.</a>
+              <a href="faq.php">F.A.Q.</a>
             </p>
           </li>
           <li>
             <p>
-              <a href="#!">Contacto</a>
+              <a href="contact.php">Contacto</a>
             </p>
           </li>
         </ul>

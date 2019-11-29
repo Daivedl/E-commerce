@@ -1,6 +1,3 @@
-<?php
-require_once("./libs/Mobile_Detect.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
 
