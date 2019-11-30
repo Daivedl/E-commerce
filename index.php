@@ -22,6 +22,50 @@
     <?php include_once("header.php") ?>
   </header>
   <!-- fin header-->
+  <!--Categorias-->
+  <nav class="nav nav-pills nav-fill d-inline justify-content-around">
+    <ul class="nav">
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Zapatillas</a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item">Deportivas</a>
+          <a href="#" class="dropdown-item">De vestir</a>
+          <a href="#" class="dropdown-item">Trecking</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Indumentaria</a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item">Ropa de invierno</a>
+          <a href="#" class="dropdown-item">Ropa de verano</a>
+          <a href="#" class="dropdown-item">Temporada 2019</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Accesorios</a>
+      </li>
+    </ul>
+  </nav>
+  <!--Fin de categorias-->
+  <!-- Descuentos-->
+  <div class="container-fluid text-center  rounded mb-1 mt-1 pb-1 pt-1">
+    <div class="row">
+      <div class="col-sm">
+        <img src="./images/camion.svg" width="<?= $logo ?>" height="<?= $logo ?>" alt="">
+        Envio gratis
+      </div>
+      <div class="col-sm">
+        <img src="./images/descuento.svg" width="<?= $logo ?>" height="<?= $logo ?>" alt="">
+        Descuento universitarios
+      </div>
+      <div class="col-sm">
+        <img src="./images/porc.svg" width="<?= $logo ?>" height="<?= $logo ?>" alt="">
+        Más descuentos
+      </div>
+    </div>
+
+  </div>
+  <!-- Fin descuentos-->
   <!--Carrousel-->
   <div id="carrouselprincipal" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">

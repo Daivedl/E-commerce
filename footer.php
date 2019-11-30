@@ -1,21 +1,3 @@
-<div class="container">
-
-  <!-- Call to action -->
-  <ul class="list-unstyled list-inline text-center py-2">
-    <li class="list-inline-item">
-      <h5 class="mb-1">REGISTRATE</h5>
-    </li>
-    <li class="list-inline-item">
-      <a href="#!" class="btn btn-outline-white btn-rounded">¡Clic acá!</a>
-    </li>
-  </ul>
-  <!-- Call to action -->
-
-</div>
-<!-- Footer Elements -->
-
-
-
 <!-- Footer -->
 <footer class="page-footer font-small mdb-color lighten-3 pt-4">
 
