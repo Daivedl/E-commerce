@@ -13,7 +13,7 @@
   <title>Sneakers</title>
 </head>
 
-<body>
+<body class="container-fluid">
 
   <?php include_once('header.php'); ?>
 

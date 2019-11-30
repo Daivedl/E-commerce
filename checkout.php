@@ -14,7 +14,7 @@
 
 </head>
 
-<body class="bg-light">
+<body class="bg-light container-fluid">
 
   <?php include_once('header.php'); ?>
 

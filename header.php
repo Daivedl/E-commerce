@@ -1,12 +1,3 @@
-<?php
-require_once("./libs/Mobile_Detect.php");
-$detect = new Mobile_Detect();
-if ($detect->isMobile()) {
-    $logo = 20;
-} else {
-    $logo = 40;
-}
-?>
 <!--Barra de navegacion-->
 <nav class="navbar navbar-expand-lg navbar-light bg-ligth rounded">
     <a href="index.php" class="navbar-brand">

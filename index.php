@@ -1,3 +1,12 @@
+<?php
+require_once("./libs/Mobile_Detect.php");
+$detect = new Mobile_Detect();
+if ($detect->isMobile()) {
+  $logo = 20;
+} else {
+  $logo = 40;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
