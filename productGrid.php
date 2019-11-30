@@ -24,7 +24,7 @@
         <h1 class="jumbotron-heading">Sneakers</h1>
         <p class="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, distinctio obcaecati. Ullam deserunt ea a.</p>
         <p>
-          <a href="#" class="btn btn-primary my-2">Comprar</a>
+          <a href="checkout.php" class="btn btn-primary my-2">Comprar</a>
           <a href="#" class="btn btn-secondary my-2">Reviews</a>
         </p>
       </div>

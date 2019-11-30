@@ -28,7 +28,7 @@
       <li class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Zapatillas</a>
         <div class="dropdown-menu">
-          <a href="#" class="dropdown-item">Deportivas</a>
+          <a href="productGrid.php" class="dropdown-item">Deportivas</a>
           <a href="#" class="dropdown-item">De vestir</a>
           <a href="#" class="dropdown-item">Trecking</a>
         </div>
