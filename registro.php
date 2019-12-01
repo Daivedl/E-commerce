@@ -29,7 +29,7 @@ if ($_POST) {
                     "nombre" => $_POST["nombre"],
                     "apellido" => $_POST["apellido"],
                     "email" => $_POST["email"],
-                    "fecha_nacimiento" => $_POST["fecha_nacimiento"],
+                    "nacimiento" => $_POST["nacimiento"],
                     "password" => $pass
                 ];
                 $base[] = $usuario; //guardamos el usuario en la base de datos
@@ -70,14 +70,14 @@ if ($_POST) {
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="campo_nombre">Nombre </label>
-                            <input id="campo_nombre" type="text" name="nombre" class="form-control" placeholder="Ingrese su nombre " required="required" data-error="Por favor ingrese su nombre.">
+                            <input id="campo_nombre" type="text" name="nombre" class="form-control" placeholder="Ingrese su nombre " required="required" <?php if ($_POST) : ?> value=" <?= $_POST["nombre"] ?>" <?php endif; ?>>
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="campo_apellido">Apellido </label>
-                            <input id="campo_apellido" type="text" name="apellido" class="form-control" placeholder="Ingrese su apellido " required="required" data-error="Por favor ingrese su apellido.">
+                            <input id="campo_apellido" type="text" name="apellido" placeholder="Ingrese su apellido" class="form-control" required="required" <?php if ($_POST) : ?> value=" <?= $_POST["apellido"] ?>" <?php endif; ?>>
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
@@ -86,14 +86,14 @@ if ($_POST) {
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="campo_email">Email </label>
-                            <input id="campo_email" type="email" name="email" class="form-control" placeholder="Ingrese su email " required="required" data-error="Ingrese un email válido.">
+                            <input id="campo_email" type="email" name="email" class="form-control" placeholder="Ingrese su email " required="required" data-error="Ingrese un email válido." <?php if ($_POST) : ?> value=" <?= $_POST["email"] ?>" <?php endif; ?>>
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="campo_fecha">Ingrese su fecha de nacimiento </label>
                         <div class="row ml-1 mr-1">
-                            <input type="date" id="campo_fecha" name="fecha_nacimiento" min="1900-01-01" max="2019-12-31" value="1980-01-01" class="form-control" required>
+                            <input type="date" id="campo_fecha" class="form-control" name="nacimiento" min="1900-01-01" max="2019-12-31" <?php if ($_POST) : ?> value="<?= $_POST["nacimiento"] ?>" <?php endif; ?>>
                         </div>
 
                     </div>
