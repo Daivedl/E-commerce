@@ -1,0 +1,1 @@
+[{"nombre":"Facundo","apellido":"Lucero","email":"facundolucerofiorelli@gmail.com","fecha_nacimiento":"1980-01-01","password":"$2y$10$RqQ.9m70vhzI9i99CutTqO\/yy6Nmo8gtVp4slj86JIwhYGajEQRzC"},{"nombre":"Facundo","apellido":"Lucero","email":"hola@gmail.com","fecha_nacimiento":"1980-01-01","password":"$2y$10$S5K5KVCDvjdDXQMu1H.LreMI4V\/UliSheWizaXNR3h32tDyB5WsQG"}]

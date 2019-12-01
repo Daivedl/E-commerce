@@ -4,7 +4,7 @@ $detect = new Mobile_Detect();
 if ($detect->isMobile()) {
   $logo = 20;
 } else {
-  $logo = 40;
+  $logo = 35;
 }
 ?>
 <!DOCTYPE html>
@@ -69,7 +69,7 @@ if ($detect->isMobile()) {
       </div>
       <div class="col-sm">
         <img src="./images/porc.svg" width="<?= $logo ?>" height="<?= $logo ?>" alt="">
-        Más descuentos
+        Y muchos mas beneficios!
       </div>
     </div>
 
