@@ -110,9 +110,43 @@ if ($detect->isMobile()) {
       <span class="sr-only">Siguiente</span>
     </a>
   </div>
+  <div class="album py-5 bg-light">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow rounded-circle border-0 shadow-lgz">
+              <img class="card-img-top rounded-circle border-0 shadow-lg" src="images\rev-index1.jpg" alt="">
+            </div>
+            <div class="product-text text-center">
+              <h6><b>ZAPATILLAS DEPORTIVAS</b><h6> 
+                 
+            </div>
+          </div><div class="col-md-4">
+            <div class="card mb-4 box-shadow rounded-circle border-0 shadow-lg">
+              <img class="card-img-top rounded-circle border-0 shadow-lg" src="images\rev-index2.jpg" alt="">
+            </div>
+            <div class="product-text text-center">
+              <h6><b>ZAPATILLAS DE VESTIR</b><h6> 
+                 
+            </div>
+          </div><div class="col-md-4">
+            <div class="card mb-4 box-shadow rounded-circle border-light border-0 shadow-lg">
+              <img class="card-img-top rounded-circle border-0 shadow-lg" src="images\Adidas-Ultra-Boost-ST.jpg" alt="">
+            </div>
+            <div class="product-text text-center">
+              <h6><b>TEMPORADA 2020</b><h6> 
+                
+            </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          
+          
   <!--Fin carrousel-->
   <!--Inicio Footer -->
-  <?php include_once("footer.php") ?>;
+  <?php include_once("footer.php") ?>
   <!--Fin Footer -->
   <!--Jquery-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
