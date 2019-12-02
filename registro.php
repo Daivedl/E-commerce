@@ -28,7 +28,7 @@ if ($_POST) {
         }
         // si no hubo errores buscamos usuarios repetidos por email
         if ($contador_de_errores == 0) {
-            $base = file_get_contents("base.txt");
+            $base = file_get_contents("./resources/base.txt");
             $base = json_decode($base, true); //abrimos la base de datos para poder trabajar
             foreach ($base as $cada_usuario) {
                 foreach ($cada_usuario as $campo => $valor) {
@@ -50,7 +50,7 @@ if ($_POST) {
                 $guardado = true;
             }
             $base = json_encode($base);
-            file_put_contents("base.txt", $base); //guardamos la base de datos
+            file_put_contents("./resources/base.txt", $base); //guardamos la base de datos
         }
     }
 }

@@ -16,7 +16,7 @@ $error = [
 ];
 if ($_POST) {
     $error["email"] = true;
-    $base = file_get_contents("base.txt");
+    $base = file_get_contents("./resources/base.txt");
     $base = json_decode($base, true); //abrimos la base de datos para poder trabajar
     foreach ($base as $cada_usuario) {
         foreach ($cada_usuario as $campo => $valor) {
