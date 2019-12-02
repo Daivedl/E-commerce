@@ -2,9 +2,11 @@
 require_once("./libs/Mobile_Detect.php");
 $detect = new Mobile_Detect();
 if ($detect->isMobile()) {
-    $widht = 50;
+    $width0 = 50;
+    $width1 = 100;
 } else {
-    $widht = 25;
+    $width0 = 25;
+    $width1 = 50;
 }
 $login = false;
 $nombre = null;
@@ -56,7 +58,7 @@ if ($_POST) {
     </header>
     <!-- fin header-->
     <!-- formulario-->
-    <form class="form-signin text-center w-<?= $widht ?> mr-auto ml-auto mt-5" id="login" method="post" action="login.php">
+    <form class="form-signin text-center w-<?= $width0 ?> mr-auto ml-auto mt-5" id="login" method="post" action="login.php">
         <h1 class="h3 mb-3 font-weight-normal mb-4">Iniciar Sesión</h1>
         <input type="email" id="inputEmail" class="form-control mb-3" placeholder="Email" name="email" required autofocus>
         <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" name="password" required>
@@ -69,7 +71,7 @@ if ($_POST) {
     </form>
     <!--fin formulario-->
     <!--menssages-->
-    <div class="mt-4 w-50 mr-auto ml-auto">
+    <div class="mt-4 w-<?= $width1 ?> mr-auto ml-auto">
         <?php if ($login == true) : ?>
             <div class="alert alert-success text-center w-50 ml-auto mr-auto" role="alert">
                 Bienvenido <?= $nombre ?>
