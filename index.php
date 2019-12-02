@@ -140,17 +140,6 @@ if ($detect->isMobile()) {
     </div>
   </div>
  
- 
-    <div class="row bg-light ml-0 mr-0">
-  <div class="col-12 col-md-8 border-light border-0">
-  <img class="img-fluid rounded" src="images\Screenshot_6.jpg" alt="">
-  </div>
-    <div class="col-6 col-md-4">
-    <h3 class="text-center font-weight-bold">DISEÑADA PARA SER REGENERADA</h3>
-    <h6 class="text-center font-weight-light ">100% reciclable, Futurecraft Loop es nuestra primera zapatilla de running que nunca desecharás.</h6>
-    <a class="btn btn-primary btn-lg font-weight-light" href="productGrid.php" role="button">Mas información</a>
-    </div>
-  </div>
 
 
   <!--Fin carrousel-->
