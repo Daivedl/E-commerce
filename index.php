@@ -57,7 +57,7 @@ if ($detect->isMobile()) {
   </nav>
   <!--Fin de categorias-->
   <!-- Descuentos-->
-  <div class="container-fluid text-center  rounded mb-1 mt-1 pb-1 pt-1 text-light bg-dark">
+  <div class="container-fluid text-center  rounded mb-1 mt-1 pb-1 pt-1 text-light bg-secondary">
     <div class="row">
       <div class="col-sm">
         <img src="./images/camion.svg" width="<?= $logo ?>" height="<?= $logo ?>" alt="">
