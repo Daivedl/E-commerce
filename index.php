@@ -38,7 +38,7 @@ if ($detect->isMobile()) {
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Indumentaria</a>
         <div class="dropdown-menu">
           <a href="productInvierno.php" class="dropdown-item">Ropa de invierno</a>
-          <a href="#" class="dropdown-item">Ropa de verano</a>
+          <a href="productVerano.php" class="dropdown-item">Ropa de verano</a>
           <a href="#" class="dropdown-item">Temporada 2019</a>
         </div>
       </li>
