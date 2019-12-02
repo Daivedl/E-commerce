@@ -115,7 +115,7 @@ if ($detect->isMobile()) {
 
         <div class="row">
           <div class="col-md-4">
-            <div class="card mb-4 box-shadow rounded-circle border-0 shadow-lgz">
+            <div class="card mb-4 box-shadow rounded-circle border-0 shadow-lg">
               <img class="card-img-top rounded-circle border-0 shadow-lg" src="images\rev-index1.jpg" alt="">
             </div>
             <div class="product-text text-center">
