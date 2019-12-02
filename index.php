@@ -39,7 +39,7 @@ if ($detect->isMobile()) {
         <div class="dropdown-menu">
           <a href="productInvierno.php" class="dropdown-item">Ropa de invierno</a>
           <a href="productVerano.php" class="dropdown-item">Ropa de verano</a>
-          <a href="#" class="dropdown-item">Temporada 2019</a>
+          <a href="productTemporada2019.php" class="dropdown-item">Temporada 2019</a>
         </div>
       </li>
       <li class="nav-item">
