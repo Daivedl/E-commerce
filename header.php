@@ -19,7 +19,7 @@
                 <a href="registro.php" class="nav-link">Registro</a>
             </li>
             <li class="nav-item">
-                <a href="signIn.php" class="nav-link">Login</a>
+                <a href="login.php" class="nav-link">Login</a>
             </li>
             <li class="nav-item">
                 <a href="contact.php" class="nav-link">Contacto</a>
