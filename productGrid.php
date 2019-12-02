@@ -3,7 +3,7 @@
 
 <head>
   <!-- head comun, incluye bootstrap, fav icons etc -->
-  <?php include_once("head.php"); ?>
+  <?php include_once("./resources/head.php"); ?>
   <!-- fin head -->
 
   <title>Sneakers</title>
@@ -120,10 +120,10 @@
   </main>
 
   <!--Inicio Footer -->
-  <?php include_once("footer.php"); ?>
+  <?php include_once("./resources/footer.php"); ?>
   <!--Fin Footer -->
   <!--scripts-->
-  <?php include_once("scripts.php"); ?>
+  <?php include_once("./resources/scripts.php"); ?>
   <!-- fin scripts-->
 </body>
 

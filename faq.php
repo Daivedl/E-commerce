@@ -3,14 +3,14 @@
 
 <head>
     <!-- head comun, incluye bootstrap, fav icons etc -->
-    <?php include_once("head.php"); ?>
+    <?php include_once("./resources/head.php"); ?>
     <!-- fin head -->
     <title>Faq</title>
 </head>
 
 <body class="container-fluid">
     <header>
-        <?php include_once("header.php") ?>
+        <?php include_once("./resources/header.php"); ?>
     </header>
     <div class="container py-3">
         <div class="row">
@@ -141,10 +141,10 @@
     </div>
     <!--container-->
     <!--Inicio Footer -->
-    <?php include_once("footer.php"); ?>
+    <?php include_once("./resources/footer.php"); ?>
     <!--Fin Footer -->
     <!--scripts-->
-    <?php include_once("scripts.php"); ?>
+    <?php include_once("./resources/scripts.php"); ?>
     <!-- fin scripts-->
 </body>
 

@@ -38,7 +38,7 @@ if ($_POST) {
 
 <head>
     <!-- head comun, incluye bootstrap, fav icons etc -->
-    <?php include_once("head.php"); ?>
+    <?php include_once("./resources/head.php"); ?>
     <!-- fin head -->
     <title>Login</title>
 </head>
@@ -46,7 +46,7 @@ if ($_POST) {
 <body class="container-fluid">
     <!--header -->
     <header>
-        <?php include_once("header.php") ?>
+        <?php include_once("./resources/header.php"); ?>
     </header>
     <!-- fin header-->
     <!-- formulario-->
@@ -82,7 +82,7 @@ if ($_POST) {
     </div>
     <!--menssages-->
     <!--scripts-->
-    <?php include_once("scripts.php"); ?>
+    <?php include_once("./resources/scripts.php"); ?>
     <!-- fin scripts-->
 </body>
 

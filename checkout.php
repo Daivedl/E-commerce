@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <?php include_once("head.php"); ?>
+  <?php include_once("./resources/head.php"); ?>
 
   <title>Checkout</title>
 
@@ -10,7 +10,11 @@
 
 <body class="bg-light container-fluid">
 
-  <?php include_once('header.php'); ?>
+  <!--header -->
+  <header>
+    <?php include_once("./resources/header.php"); ?>
+  </header>
+  <!-- fin header-->
 
   <div class="container">
     <div class="py-5 text-center">
@@ -220,17 +224,17 @@
             </div>
           </div>
           <hr class="mb-4">
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Continuar con la comprobación</button>
+          <button class="btn btn-primary btn-lg btn-block mb-3" type="submit">Continuar con la comprobación</button>
         </form>
       </div>
     </div>
   </div>
 
   <!--Inicio Footer -->
-  <?php include_once("footer.php"); ?>
+  <?php include_once("./resources/footer.php"); ?>
   <!--Fin Footer -->
   <!--scripts-->
-  <?php include_once("scripts.php"); ?>
+  <?php include_once("./resources/scripts.php"); ?>
   <!-- fin scripts-->
 
 </body>
