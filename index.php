@@ -51,7 +51,7 @@ if ($detect->isMobile()) {
         </div>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link">Accesorios</a>
+        <a href="ropa-accesorios.php" class="nav-link">Accesorios</a>
       </li>
     </ul>
   </nav>
