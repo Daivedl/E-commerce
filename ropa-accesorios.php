@@ -9,9 +9,9 @@
 </head>
 
 <body class="container-fluid">
-
-  <?php include_once('header.php'); ?>
-
+  <header>
+    <?php include_once("./resources/header.php"); ?>
+  </header>
   <main role="main">
 
     <section class="jumbotron text-center bg-warning text-light">
