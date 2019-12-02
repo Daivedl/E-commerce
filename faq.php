@@ -14,7 +14,7 @@
     </header>
     <div class="container py-3">
         <div class="row">
-            <div class="col-10 mx-auto">
+            <div class="col-12 mx-auto ">
                 <div class="accordion" id="faqExample">
                     <div class="card">
                         <div class="card-header p-2" id="headingOne">
