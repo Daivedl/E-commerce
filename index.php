@@ -39,7 +39,7 @@ if ($detect->isMobile()) {
         <div class="dropdown-menu">
           <a href="productGrid.php" class="dropdown-item">Deportivas</a>
           <a href="productVestir.php" class="dropdown-item">De vestir</a>
-          <a href="#" class="dropdown-item">Trecking</a>
+          <a href="productTrekking.php" class="dropdown-item">Trekking</a>
         </div>
       </li>
       <li class="nav-item dropdown">
