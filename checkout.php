@@ -1,11 +1,11 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
+  <!-- head comun, incluye bootstrap, fav icons etc -->
   <?php include_once("./resources/head.php"); ?>
-
+  <!-- fin head -->
   <title>Checkout</title>
-
 </head>
 
 <body class="bg-light container-fluid">
