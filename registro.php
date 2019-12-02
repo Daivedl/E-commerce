@@ -1,25 +1,39 @@
 <?php
-$error = null;
-$encontrado = null;
+$error = [
+    "password" => null,
+    "email" => null
+];
+$encontrado = null; //variable para buscar usuarios repetidos por email
+$vacio = false; //variable para buscar campos vacios
+$guardado = false; //variable para saber si el registro fue exitoso
 if ($_POST) {
-    if ($_POST["pass"] != $_POST["confirm_pass"]) {
-        $error = true;
-    } else {
-        $error = false; //no se encotraron errores en el formulario
-        $base = file_get_contents("base.txt");
-        $base = json_decode($base); //abrimos la base de datos para poder trabajar
-        $vacio = false; //variable para buscar campos vacios
-        $encontrado = false; //variable para buscar usuarios ya registrados, por email
-        foreach ($_POST as $campo => $valor) {
-            if (strlen($valor) == 0) {
-                $vacio = true; //si encotramos un campo vacio
+    foreach ($_POST as $campo => $valor) { //buscamos capos vacios
+        if (strlen($valor) == 0) {
+            $vacio = true;
+        }
+    }
+    if ($vacio == false) { //si no hay campos vacios comprobamos cada campo, buscando errores
+        if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == false) {
+            $error["email"] = true; //si no es un email valido hay un error
+        }
+        if ($_POST["pass"] != $_POST["confirm_pass"]) {
+            $error["password"] = true; //si no coinciden las contraseñas hay un error
+        }
+        // contamos la cantidad de errores
+        $contador_de_errores = 0;
+        foreach ($error as $campo => $valor) {
+            if ($valor == true) {
+                $contador_de_errores++;
             }
         }
-        if ($vacio == false) { //si no hay campos vacios buscamos si ya existe el usuario
+        // si no hubo errores buscamos usuarios repetidos por email
+        if ($contador_de_errores == 0) {
+            $base = file_get_contents("base.txt");
+            $base = json_decode($base); //abrimos la base de datos para poder trabajar
             foreach ($base as $cadausuario) {
                 foreach ($cadausuario as $campo => $valor) {
                     if ($campo == "email" && $valor == $_POST["email"]) { //comparamos los emails de todos los usuarios
-                        $encontrado = true; // si encotramos un usuario
+                        $encontrado = true; // si encotramos el usuario
                     }
                 }
             }
@@ -33,6 +47,7 @@ if ($_POST) {
                     "password" => $pass
                 ];
                 $base[] = $usuario; //guardamos el usuario en la base de datos
+                $guardado = true;
             }
             $base = json_encode($base);
             file_put_contents("base.txt", $base); //guardamos la base de datos
@@ -120,22 +135,32 @@ if ($_POST) {
     </div>
     <!--Fin formulario de registro -->
     <!-- Message-->
-    <?php if (isset($error) != false) : ?>
-        <?php if ($error == true) : ?>
-            <div class="alert alert-danger text-center w-50 ml-auto mr-auto" role="alert">
-                Error en el registro, las contraseñas coinciden?
-            </div>
-        <?php elseif ($encontrado != true) : ?>
-            <div class="alert alert-success text-center w-50 ml-auto mr-auto" role="alert">
-                Usted se ha registrado correctamente!
-            </div>
-        <?php endif; ?>
-        <?php if ($encontrado == true) : ?>
-            <div class="alert alert-warning text-center w-50 ml-auto mr-auto" role="alert">
-                Ya se ha registrado ese email en nuestro sitio!
-            </div>
-        <?php endif; ?>
+    <?php if ($vacio == true) : ?>
+        <div class="alert alert-danger text-center w-50 ml-auto mr-auto" role="alert">
+            Complete todos los campos requeridos!
+        </div>
     <?php endif; ?>
+    <?php if ($error["password"] == true) : ?>
+        <div class="alert alert-danger text-center w-50 ml-auto mr-auto" role="alert">
+            Las contraseñas no coinciden.
+        </div>
+    <?php endif; ?>
+    <?php if ($error["email"] == true) : ?>
+        <div class="alert alert-danger text-center w-50 ml-auto mr-auto" role="alert">
+            Ingrese un email valido.
+        </div>
+    <?php endif; ?>
+    <?php if ($encontrado == true) : ?>
+        <div class="alert alert-warning text-center w-50 ml-auto mr-auto" role="alert">
+            Ya se ha registrado ese email en nuestro sitio!
+        </div>
+    <?php endif; ?>
+    <?php if ($guardado == true) : ?>
+        <div class="alert alert-success text-center w-50 ml-auto mr-auto" role="alert">
+            Usted se ha registrado correctamente!
+        </div>
+    <?php endif; ?>
+
     <!-- Message-->
     <!--Inicio Footer -->
     <?php include_once("footer.php") ?>;
