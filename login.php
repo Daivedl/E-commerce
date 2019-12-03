@@ -12,21 +12,40 @@ $login = false;
 $nombre = null;
 $error = [
     "password" => false,
-    "email" => null
+    "email" => null,
+    "username" => null
 ];
 if ($_POST) {
-    $error["email"] = true;
     $base = file_get_contents("./resources/base.txt");
     $base = json_decode($base, true); //abrimos la base de datos para poder trabajar
-    foreach ($base as $cada_usuario) {
-        foreach ($cada_usuario as $campo => $valor) {
-            if ($campo == "email" && $valor == $_POST["email"]) { //encontramos el email
-                $error["email"] = false;
-                if (password_verify($_POST["password"], $cada_usuario["password_hash"])) { //verificamos la contraseña
-                    $nombre = $cada_usuario["nombre"] . " " . $cada_usuario["apellido"];
-                    $login = true;
-                } else {
-                    $error["password"] = true;
+    $is_email = filter_var($_POST["email/username"], FILTER_VALIDATE_EMAIL); //buscamos por email o por username
+    if ($is_email == true) {
+        $error["email"] = true;
+        foreach ($base as $cada_usuario) {
+            foreach ($cada_usuario as $campo => $valor) {
+                if ($campo == "email" && $valor == $_POST["email/username"]) { //encontramos el email
+                    $error["email"] = false;
+                    if (password_verify($_POST["password"], $cada_usuario["password_hash"])) { //verificamos la contraseña
+                        $nombre = $cada_usuario["nombre"] . " " . $cada_usuario["apellido"];
+                        $login = true;
+                    } else {
+                        $error["password"] = true;
+                    }
+                }
+            }
+        }
+    } else {
+        $error["username"] = true;
+        foreach ($base as $cada_usuario) {
+            foreach ($cada_usuario as $campo => $valor) {
+                if ($campo == "username" && $valor == $_POST["email/username"]) { //encontramos el username
+                    $error["username"] = false;
+                    if (password_verify($_POST["password"], $cada_usuario["password_hash"])) { //verificamos la contraseña
+                        $nombre = $cada_usuario["nombre"] . " " . $cada_usuario["apellido"];
+                        $login = true;
+                    } else {
+                        $error["password"] = true;
+                    }
                 }
             }
         }
@@ -52,7 +71,7 @@ if ($_POST) {
     <!-- formulario-->
     <form class="form-signin text-center w-<?= $width0 ?> mr-auto ml-auto mt-5" id="login" method="post" action="login.php">
         <h1 class="h3 mb-3 font-weight-normal mb-4">Iniciar Sesión</h1>
-        <input type="email" id="inputEmail" class="form-control mb-3" placeholder="Email" name="email" required autofocus>
+        <input type="text" id="input" class="form-control mb-3" placeholder="Email o username" name="email/username" required autofocus>
         <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" name="password" required>
         <div class="checkbox mt-3 mb-3">
             <label>
@@ -76,7 +95,12 @@ if ($_POST) {
         <?php endif; ?>
         <?php if ($error["email"] == true) : ?>
             <div class="alert alert-danger text-center w-50 ml-auto mr-auto" role="alert">
-                Ese email no esta registrado en el sitio.
+                Ese email no está registrado en el sitio.
+            </div>
+        <?php endif; ?>
+        <?php if ($error["username"] == true) : ?>
+            <div class="alert alert-danger text-center w-50 ml-auto mr-auto" role="alert">
+                Error en el nomnbre de usuario.
             </div>
         <?php endif; ?>
     </div>

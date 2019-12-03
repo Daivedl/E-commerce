@@ -1,14 +1,26 @@
 <?php
 $error = [
     "password" => null,
-    "email" => null
+    "email" => null,
+    "img_perfil" => null
 ];
-$encontrado = null; //variable para buscar usuarios repetidos por email
+$encontrado = [ //variable para buscar usuarios repetidos por email o por usuario
+    "email" => null,
+    "username" => null
+];
 $vacio = false; //variable para buscar campos vacios
 $guardado = false; //variable para saber si el registro fue exitoso
+if ($_FILES) {
+    if ($_FILES["img_pefil"] != 0) { }
+}
 if ($_POST) {
+    foreach ($_POST as $campo => $valor) { //quitamos los espacios blancos, menos en las contraseñas
+        if ($campo != "pass" && $campo != "confirm_pass" && $campo != "img_perfil") {
+            $_POST[$campo] = trim($valor);
+        }
+    }
     foreach ($_POST as $campo => $valor) { //buscamos capos vacios
-        if (strlen($valor) == 0) {
+        if (strlen($valor) == 0 && $campo != "img_perfil") { //excluimos la img de perfil ya que es opcional
             $vacio = true;
         }
     }
@@ -33,16 +45,24 @@ if ($_POST) {
             foreach ($base as $cada_usuario) {
                 foreach ($cada_usuario as $campo => $valor) {
                     if ($campo == "email" && $valor == $_POST["email"]) { //comparamos los emails de todos los usuarios
-                        $encontrado = true; // si encotramos el usuario
+                        $encontrado["email"] = true; // si encotramos el usuario
                     }
                 }
             }
-            if ($encontrado == false) { //si no se repitio un email generamos el usuario
+            foreach ($base as $cada_usuario) {
+                foreach ($cada_usuario as $campo => $valor) {
+                    if ($campo == "username" && $valor == $_POST["username"]) { //comparamos los username de todos los usuarios
+                        $encontrado["username"] = true; // si encotramos el usuario
+                    }
+                }
+            }
+            if ($encontrado["email"] == false && $encontrado["username"] == false) { //si no se repitio un email o un username generamos el usuario
                 $pass = password_hash($_POST["pass"], PASSWORD_DEFAULT);
                 $usuario = [
                     "nombre" => $_POST["nombre"],
                     "apellido" => $_POST["apellido"],
                     "email" => $_POST["email"],
+                    "username" => $_POST["username"],
                     "nacimiento" => $_POST["nacimiento"],
                     "password_hash" => $pass
                 ];
@@ -72,7 +92,7 @@ if ($_POST) {
     <!--Inicio formulario de registro -->
     <div class="row">
         <div class="col-xl-8 offset-xl-2 py-5">
-            <form id="registro" method="post" action="registro.php" role="form">
+            <form id="registro" method="post" action="registro.php" role="form" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -85,6 +105,22 @@ if ($_POST) {
                         <div class="form-group">
                             <label for="campo_apellido">Apellido </label>
                             <input id="campo_apellido" type="text" name="apellido" placeholder="Ingrese su apellido" class="form-control" required="required" <?php if ($_POST) : ?> value=" <?= $_POST["apellido"] ?>" <?php endif; ?>>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="campo_username">Nickname </label>
+                            <input id="campo_username" type="text" minlength="4" name="username" class="form-control" placeholder="Ingrese un nombre de usuario" required="required" data-error="Ingrese un nombre de usuario valido" <?php if ($_POST) : ?> value=" <?= $_POST["username"] ?>" <?php endif; ?>>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="img_perfil">Elija una foto de Perfil (opcional) </label>
+                            <input type="file" name="img_perfil" id="img_pefil" class="form-control-file">
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
@@ -142,9 +178,14 @@ if ($_POST) {
             Ingrese un email valido.
         </div>
     <?php endif; ?>
-    <?php if ($encontrado == true) : ?>
+    <?php if ($encontrado["email"] == true) : ?>
         <div class="alert alert-warning text-center w-50 ml-auto mr-auto" role="alert">
             Ya se ha registrado ese email en nuestro sitio!
+        </div>
+    <?php endif; ?>
+    <?php if ($encontrado["username"] == true) : ?>
+        <div class="alert alert-warning text-center w-50 ml-auto mr-auto" role="alert">
+            El username <?= $_POST["username"] ?> ya está en uso, elija otro.
         </div>
     <?php endif; ?>
     <?php if ($guardado == true) : ?>
