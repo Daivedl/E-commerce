@@ -1,3 +1,12 @@
+<?php
+require_once("./libs/Mobile_Detect.php");
+$detect = new Mobile_Detect();
+if ($detect->isMobile()) {
+  $logo = 20;
+} else {
+  $logo = 35;
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -12,6 +21,31 @@
   <header>
     <?php include_once("./resources/header.php"); ?>
   </header>
+  <!--Categorias-->
+  <nav class="nav nav-pills nav-fill d-inline justify-content-around">
+    <ul class="nav">
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Zapatillas</a>
+        <div class="dropdown-menu">
+          <a href="productGrid.php" class="dropdown-item">Deportivas</a>
+          <a href="productVestir.php" class="dropdown-item">De vestir</a>
+          <a href="productTrekking.php" class="dropdown-item">Trekking</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Indumentaria</a>
+        <div class="dropdown-menu">
+          <a href="productInvierno.php" class="dropdown-item">Ropa de invierno</a>
+          <a href="productVerano.php" class="dropdown-item">Ropa de verano</a>
+          <a href="productTemporada2019.php" class="dropdown-item">Temporada 2019</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="ropa-accesorios.php" class="nav-link">Accesorios</a>
+      </li>
+    </ul>
+  </nav>
+  <!--Fin de categorias-->
   <main role="main">
 
     <section class="jumbotron text-center bg-secondary text-light">
