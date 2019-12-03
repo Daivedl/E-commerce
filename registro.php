@@ -11,11 +11,11 @@ $encontrado = [ //variable para buscar usuarios repetidos por email o por usuari
 $vacio = false; //variable para buscar campos vacios
 $guardado = false; //variable para saber si el registro fue exitoso
 if ($_FILES) {
-    if ($_FILES["img_pefil"]["error"] != 0) { //buscamos errores en la subida de la imagen de perfil
+    if ($_FILES["img_perfil"]["error"] != 0) { //buscamos errores en la subida de la imagen de perfil
         $error["img_perfil"] = true;
     } else {
         $ext = pathinfo($_FILES["img_perfil"]["name"], PATHINFO_EXTENSION);
-        if ($ext != "jpeg" || $ext != "jpg" || "png") {
+        if ($ext != "jpeg" && $ext != "jpg" && $ext != "png") {
             $error["img_perfil"] = true;
         }
     }
@@ -75,7 +75,7 @@ if ($_POST) {
                 ];
                 if ($_FILES) {
                     if ($error["img_perfil"] != true) { //subimos la foto 
-                        move_uploaded_file($_FILES["img_perfil"]["tmp_name"], "./resources/" . $_POST["username"] . $ext);
+                        move_uploaded_file($_FILES["img_perfil"]["tmp_name"], "./resources/." . $_POST["username"] . $ext);
                     }
                 }
                 $base[] = $usuario; //guardamos el usuario en la base de datos
