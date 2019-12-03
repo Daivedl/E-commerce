@@ -75,7 +75,7 @@ if ($_POST) {
                 ];
                 if ($_FILES) {
                     if ($error["img_perfil"] != true) { //subimos la foto 
-                        move_uploaded_file($_FILES["img_perfil"]["tmp_name"], "./resources/." . $_POST["username"] . $ext);
+                        move_uploaded_file($_FILES["img_perfil"]["tmp_name"], "./resources/" . $_POST["username"] . "." . $ext);
                     }
                 }
                 $base[] = $usuario; //guardamos el usuario en la base de datos
