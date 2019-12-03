@@ -26,6 +26,7 @@ if ($_POST) {
                 if ($campo == "email" && $valor == $_POST["email/username"]) { //encontramos el email
                     $error["email"] = false;
                     if (password_verify($_POST["password"], $cada_usuario["password_hash"])) { //verificamos la contraseña
+                        $_SESSION["username"] = $cada_usuario["username"];
                         $_SESSION["login"] = true;
                     } else {
                         $error["password"] = true;
@@ -40,6 +41,7 @@ if ($_POST) {
                 if ($campo == "username" && $valor == $_POST["email/username"]) { //encontramos el username
                     $error["username"] = false;
                     if (password_verify($_POST["password"], $cada_usuario["password_hash"])) { //verificamos la contraseña
+                        $_SESSION["username"] = $cada_usuario["username"];
                         $_SESSION["login"] = true;
                     } else {
                         $error["password"] = true;

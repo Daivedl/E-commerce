@@ -93,6 +93,7 @@ if ($_POST) {
 }
 
 if ($_SESSION["login"] == true) { //redirigimos al usuario al index
+    $_SESSION["username"] = $_POST["username"];
     header("Location: index.php");
 }
 ?>
