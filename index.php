@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("./libs/Mobile_Detect.php");
 $detect = new Mobile_Detect();
 if ($detect->isMobile()) {
@@ -139,7 +140,7 @@ if ($detect->isMobile()) {
       </div>
     </div>
   </div>
- 
+
 
 
   <!--Fin carrousel-->
@@ -153,3 +154,4 @@ if ($detect->isMobile()) {
 </body>
 
 </html>
+<?php var_dump($_SESSION); ?>

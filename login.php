@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("./libs/Mobile_Detect.php");
 $detect = new Mobile_Detect();
 if ($detect->isMobile()) {
@@ -8,8 +9,7 @@ if ($detect->isMobile()) {
     $width0 = 25;
     $width1 = 50;
 }
-$login = false;
-$nombre = null;
+$_SESSION["login"] = false;
 $error = [
     "password" => false,
     "email" => null,
@@ -26,8 +26,7 @@ if ($_POST) {
                 if ($campo == "email" && $valor == $_POST["email/username"]) { //encontramos el email
                     $error["email"] = false;
                     if (password_verify($_POST["password"], $cada_usuario["password_hash"])) { //verificamos la contraseña
-                        $nombre = $cada_usuario["nombre"] . " " . $cada_usuario["apellido"];
-                        $login = true;
+                        $_SESSION["login"] = true;
                     } else {
                         $error["password"] = true;
                     }
@@ -41,8 +40,7 @@ if ($_POST) {
                 if ($campo == "username" && $valor == $_POST["email/username"]) { //encontramos el username
                     $error["username"] = false;
                     if (password_verify($_POST["password"], $cada_usuario["password_hash"])) { //verificamos la contraseña
-                        $nombre = $cada_usuario["nombre"] . " " . $cada_usuario["apellido"];
-                        $login = true;
+                        $_SESSION["login"] = true;
                     } else {
                         $error["password"] = true;
                     }
@@ -50,6 +48,9 @@ if ($_POST) {
             }
         }
     }
+}
+if ($_SESSION["login"] == true) { //redirigimos al usuario al index
+    header("Location: index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -83,14 +84,9 @@ if ($_POST) {
     <!--fin formulario-->
     <!--menssages-->
     <div class="mt-4 w-<?= $width1 ?> mr-auto ml-auto">
-        <?php if ($login == true) : ?>
-            <div class="alert alert-success text-center w-50 ml-auto mr-auto" role="alert">
-                Bienvenido <?= $nombre ?>
-            </div>
-        <?php endif; ?>
         <?php if ($error["password"] == true) : ?>
             <div class="alert alert-warning text-center w-50 ml-auto mr-auto" role="alert">
-                Esa contraseña no coincide con el email.
+                Esa contraseña no coincide con el email o username.
             </div>
         <?php endif; ?>
         <?php if ($error["email"] == true) : ?>

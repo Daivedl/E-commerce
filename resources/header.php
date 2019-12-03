@@ -15,12 +15,14 @@
             <li class="nav-item">
                 <a href="faq.php" class="nav-link">FAQ</a>
             </li>
-            <li class="nav-item">
-                <a href="registro.php" class="nav-link">Registro</a>
-            </li>
-            <li class="nav-item">
-                <a href="login.php" class="nav-link">Login</a>
-            </li>
+            <?php if ($_SESSION == false) : ?>
+                <li class="nav-item">
+                    <a href="registro.php" class="nav-link">Registro</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.php" class="nav-link">Login</a>
+                </li>
+            <?php endif; ?>
             <li class="nav-item">
                 <a href="contact.php" class="nav-link">Contacto</a>
             </li>

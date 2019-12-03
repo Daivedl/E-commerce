@@ -1,4 +1,5 @@
 <?php
+session_start();
 $error = [
     "password" => null,
     "email" => null,
@@ -9,14 +10,16 @@ $encontrado = [ //variable para buscar usuarios repetidos por email o por usuari
     "username" => null
 ];
 $vacio = false; //variable para buscar campos vacios
-$guardado = false; //variable para saber si el registro fue exitoso
+$_SESSION["login"] = false; //variable para saber si el registro fue exitoso
 if ($_FILES) {
-    if ($_FILES["img_perfil"]["error"] != 0) { //buscamos errores en la subida de la imagen de perfil
-        $error["img_perfil"] = true;
-    } else {
-        $ext = pathinfo($_FILES["img_perfil"]["name"], PATHINFO_EXTENSION);
-        if ($ext != "jpeg" && $ext != "jpg" && $ext != "png") {
+    if (["img_perfil"]["name"] != "") {
+        if ($_FILES["img_perfil"]["error"] != 0) { //buscamos errores en la subida de la imagen de perfil
             $error["img_perfil"] = true;
+        } else {
+            $ext = pathinfo($_FILES["img_perfil"]["name"], PATHINFO_EXTENSION);
+            if ($ext != "jpeg" && $ext != "jpg" && $ext != "png") {
+                $error["img_perfil"] = true;
+            }
         }
     }
 }
@@ -74,17 +77,23 @@ if ($_POST) {
                     "password_hash" => $pass
                 ];
                 if ($_FILES) {
-                    if ($error["img_perfil"] != true) { //subimos la foto 
-                        move_uploaded_file($_FILES["img_perfil"]["tmp_name"], "./resources/" . $_POST["username"] . "." . $ext);
+                    if (["img_perfil"]["name"] == "") {
+                        if ($error["img_perfil"] != true) { //subimos la foto 
+                            move_uploaded_file($_FILES["img_perfil"]["tmp_name"], "./resources/" . $_POST["username"] . "." . $ext);
+                        }
                     }
                 }
                 $base[] = $usuario; //guardamos el usuario en la base de datos
-                $guardado = true;
+                $_SESSION["login"] = true;
             }
             $base = json_encode($base);
             file_put_contents("./resources/base.txt", $base); //guardamos la base de datos
         }
     }
+}
+
+if ($_SESSION["login"] == true) { //redirigimos al usuario al index
+    header("Location: index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -205,12 +214,6 @@ if ($_POST) {
             El username <?= $_POST["username"] ?> ya está en uso, elija otro.
         </div>
     <?php endif; ?>
-    <?php if ($guardado == true) : ?>
-        <div class="alert alert-success text-center w-50 ml-auto mr-auto" role="alert">
-            Usted se ha registrado correctamente!
-        </div>
-    <?php endif; ?>
-
     <!-- Message-->
     <!--Inicio Footer -->
     <?php include_once("./resources/footer.php"); ?>
