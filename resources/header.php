@@ -1,3 +1,12 @@
+<?php
+if ($_SESSION["login"] == true) { //buscamos la imagen del usuario
+    if (file_exists("./base/" . $_SESSION["username"] . ".png") == true) {
+        $perfil = "./base/" . $_SESSION["username"] . ".png";
+    } else {
+        $perfil = "./base/default.png";
+    }
+}
+?>
 <!--Barra de navegacion-->
 <nav class="navbar navbar-expand-lg navbar-light bg-ligth rounded">
     <a href="index.php" class="navbar-brand">
@@ -15,7 +24,7 @@
             <li class="nav-item">
                 <a href="faq.php" class="nav-link">FAQ</a>
             </li>
-            <?php if ($_SESSION == false) : ?>
+            <?php if ($_SESSION["login"] == false) : ?>
                 <li class="nav-item">
                     <a href="registro.php" class="nav-link">Registro</a>
                 </li>
@@ -29,10 +38,11 @@
         </ul>
         <form class="form-inline my-2 my-lg-0 ml-auto">
             <?php if ($_SESSION["login"] == true) : ?>
-                <div class="mr-5">
+                <div class="mr-5 row">
                     <h5>
                         <?= $_SESSION["username"] ?>
                     </h5>
+                    <img src="<?= $perfil ?>" alt="" width="30" height="30" class="ml-3">
                 </div>
             <?php endif; ?>
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar" />
