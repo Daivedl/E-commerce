@@ -23,15 +23,15 @@ if ($detect->isMobile()) {
 <div id="carouselExampleSlidesOnly" class="carousel slide bg-secondary" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active text-center">
-      <img class="d-inline mx-auto" src="images/camion.svg" alt="First slide" width="25" height="20">
+      <img class="d-inline mx-auto" src="images/camion.svg" alt="First slide" width="25" height="30">
       <p class="text-center d-inline text-light">Envío gratis</p>
     </div>
     <div class="carousel-item text-center">
-      <img class="d-inline mx-auto" src="images/porc.svg" alt="Second slide" width="15" height="20">
+      <img class="d-inline mx-auto" src="images/porc.svg" alt="Second slide" width="15" height="30">
       <p class="text-center d-inline text-light">Descuentos universitarios</p>
     </div>
     <div class="carousel-item text-center">
-      <img class="d-inline mx-auto" src="images/descuento.svg" alt="Third slide" width="20" height="20">
+      <img class="d-inline mx-auto" src="images/descuento.svg" alt="Third slide" width="20" height="30">
       <p class="text-center d-inline text-light">¡Y muchos beneficios más!</p>
     </div>
   </div>
