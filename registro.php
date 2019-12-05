@@ -178,7 +178,7 @@ if ($_SESSION["login"] == true) { //redirigimos al usuario al index
                     </div>
                 </div>
                 <div class="col-md-12 text-center mt-4">
-                    <input type="submit" class="btn btn-success btn-send w-50" value="Registro">
+                    <input type="submit" class="btn btn-success btn-send w-25" value="Registro">
                 </div>
             </form>
         </div>
@@ -186,7 +186,7 @@ if ($_SESSION["login"] == true) { //redirigimos al usuario al index
     <!--Fin formulario de registro -->
     <!-- Message-->
     <?php if ($vacio == true) : ?>
-        <div class="alert alert-danger text-center w-50 ml-auto mr-auto" role="alert">
+        <div class="alert alert-danger text-center ml-auto mr-auto" role="alert">
             Complete todos los campos requeridos!
         </div>
     <?php endif; ?>
