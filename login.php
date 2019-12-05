@@ -16,7 +16,7 @@ $error = [
     "username" => null
 ];
 if ($_POST) {
-    $base = file_get_contents("./resources/base.txt");
+    $base = file_get_contents("./base/base.txt");
     $base = json_decode($base, true); //abrimos la base de datos para poder trabajar
     $is_email = filter_var($_POST["email/username"], FILTER_VALIDATE_EMAIL); //buscamos por email o por username
     if ($is_email == true) {

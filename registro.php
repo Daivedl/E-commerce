@@ -11,13 +11,13 @@ $encontrado = [ //variable para buscar usuarios repetidos por email o por usuari
 ];
 $vacio = false; //variable para buscar campos vacios
 $_SESSION["login"] = false; //variable para saber si el registro fue exitoso
-if ($_FILES) {
-    if (["img_perfil"]["name"] != "") {
+if ($_FILES) { //validamos la subida de la imagen
+    if ($_FILES["img_perfil"]["name"] != "") {
         if ($_FILES["img_perfil"]["error"] != 0) { //buscamos errores en la subida de la imagen de perfil
             $error["img_perfil"] = true;
         } else {
             $ext = pathinfo($_FILES["img_perfil"]["name"], PATHINFO_EXTENSION);
-            if ($ext != "jpeg" && $ext != "jpg" && $ext != "png") {
+            if ($ext != "png") {
                 $error["img_perfil"] = true;
             }
         }
@@ -50,7 +50,7 @@ if ($_POST) {
         }
         // si no hubo errores buscamos usuarios repetidos por email
         if ($contador_de_errores == 0) {
-            $base = file_get_contents("./resources/base.txt");
+            $base = file_get_contents("./base/base.txt");
             $base = json_decode($base, true); //abrimos la base de datos para poder trabajar
             foreach ($base as $cada_usuario) {
                 foreach ($cada_usuario as $campo => $valor) {
@@ -79,7 +79,7 @@ if ($_POST) {
                 if ($_FILES) {
                     if (["img_perfil"]["name"] == "") {
                         if ($error["img_perfil"] != true) { //subimos la foto 
-                            move_uploaded_file($_FILES["img_perfil"]["tmp_name"], "./resources/" . $_POST["username"] . "." . $ext);
+                            move_uploaded_file($_FILES["img_perfil"]["tmp_name"], "./base/" . $_POST["username"] . "." . $ext);
                         }
                     }
                 }
@@ -87,7 +87,7 @@ if ($_POST) {
                 $_SESSION["login"] = true;
             }
             $base = json_encode($base);
-            file_put_contents("./resources/base.txt", $base); //guardamos la base de datos
+            file_put_contents("./base/base.txt", $base); //guardamos la base de datos
         }
     }
 }
@@ -141,7 +141,7 @@ if ($_SESSION["login"] == true) { //redirigimos al usuario al index
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="img_perfil">Elija una foto de Perfil, formatos aceptados: jpg, jpeg, png (opcional) </label>
+                            <label for="img_perfil">Elija una foto de Perfil, formato aceptados: png (opcional) </label>
                             <input type="file" name="img_perfil" id="img_pefil" class="form-control-file">
                             <div class="help-block with-errors"></div>
                         </div>
