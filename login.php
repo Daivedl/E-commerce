@@ -98,7 +98,7 @@ if ($_SESSION["login"] == true) { //redirigimos al usuario al index
         <?php endif; ?>
         <?php if ($error["username"] == true) : ?>
             <div class="alert alert-danger text-center w-50 ml-auto mr-auto" role="alert">
-                Error en el nomnbre de usuario.
+                Error en el nombre de usuario.
             </div>
         <?php endif; ?>
     </div>
