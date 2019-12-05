@@ -87,18 +87,18 @@ if ($_SESSION["login"] == true) { //redirigimos al usuario al index
     <!--menssages-->
     <div class="mt-4 w-<?= $width1 ?> mr-auto ml-auto">
         <?php if ($error["password"] == true) : ?>
-            <div class="alert alert-warning text-center w-50 ml-auto mr-auto" role="alert">
-                Esa contraseña no coincide con el email o username.
+            <div class="alert alert-warning text-center ml-auto mr-auto" role="alert">
+                <p>La contraseña no coincide con el email/username.</p>
             </div>
         <?php endif; ?>
         <?php if ($error["email"] == true) : ?>
-            <div class="alert alert-danger text-center w-50 ml-auto mr-auto" role="alert">
-                Ese email no está registrado en el sitio.
+            <div class="alert alert-danger text-center ml-auto mr-auto" role="alert">
+            <p>Ese email no está registrado en el sitio.</p>
             </div>
         <?php endif; ?>
         <?php if ($error["username"] == true) : ?>
-            <div class="alert alert-danger text-center w-50 ml-auto mr-auto" role="alert">
-                Error en el nombre de usuario.
+            <div class="alert alert-danger text-center ml-auto mr-auto" role="alert">
+            <p>Error en el nombre de usuario.</p>
             </div>
         <?php endif; ?>
     </div>
