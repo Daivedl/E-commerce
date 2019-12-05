@@ -67,7 +67,7 @@ if ($detect->isMobile()) {
   </nav>
   <!--Fin de categorias-->
   <!-- Descuentos-->
-  <div class="container-fluid text-center  rounded mb-1 mt-1 pb-1 pt-1 text-light bg-secondary">
+  <!--<div class="container-fluid text-center  rounded mb-1 mt-1 pb-1 pt-1 text-light bg-secondary">
     <div class="row">
       <div class="col-sm">
         <img src="./images/camion.svg" width="<?= $logo ?>" height="<?= $logo ?>" alt="">
@@ -84,6 +84,7 @@ if ($detect->isMobile()) {
     </div>
 
   </div>
+  -->
   <!-- Fin descuentos-->
   <!--Carrousel-->
   <div id="carrouselprincipal" class="carousel slide" data-ride="carousel">
