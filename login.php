@@ -1,14 +1,6 @@
 <?php
 session_start();
-require_once("./libs/Mobile_Detect.php");
-$detect = new Mobile_Detect();
-if ($detect->isMobile()) {
-    $width0 = 75;
-    $width1 = 100;
-} else {
-    $width0 = 25;
-    $width1 = 50;
-}
+
 $_SESSION["login"] = false;
 $error = [
     "password" => false,
@@ -65,14 +57,14 @@ if ($_SESSION["login"] == true) { //redirigimos al usuario al index
     <title>Login</title>
 </head>
 
-<body class="container-fluid">
+<body class="container">
     <!--header -->
     <header>
         <?php include_once("./resources/header.php"); ?>
     </header>
     <!-- fin header-->
     <!-- formulario-->
-    <form class="form-signin text-center w-<?= $width0 ?> mr-auto ml-auto mt-5" id="login" method="post" action="login.php">
+    <form class="form-signin text-center w-50 mr-auto ml-auto mt-5" id="login" method="post" action="login.php">
         <h1 class="h3 mb-3 font-weight-normal mb-4">Iniciar Sesión</h1>
         <input type="text" id="input" class="form-control mb-3" placeholder="Email o username" name="email/username" required autofocus>
         <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" name="password" required>
@@ -85,7 +77,7 @@ if ($_SESSION["login"] == true) { //redirigimos al usuario al index
     </form>
     <!--fin formulario-->
     <!--menssages-->
-    <div class="mt-4 w-<?= $width1 ?> mr-auto ml-auto">
+    <div class="mt-4 w-50 mr-auto ml-auto">
         <?php if ($error["password"] == true) : ?>
             <div class="alert alert-warning text-center ml-auto mr-auto" role="alert">
                 <p>La contraseña no coincide con el email/username.</p>

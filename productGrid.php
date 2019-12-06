@@ -1,12 +1,6 @@
 <?php
 session_start();
-require_once("./libs/Mobile_Detect.php");
-$detect = new Mobile_Detect();
-if ($detect->isMobile()) {
-  $logo = 20;
-} else {
-  $logo = 35;
-}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -73,6 +67,8 @@ if ($detect->isMobile()) {
             <div class="product-text text-center">
               <h6>AIR FORCE 1 SAGE LOW</h6>
               <p>$ 7.199</p>
+              <a href="checkout.php"><button type="button" class="btn btn-primary text-center mb-5">Comprar</button></a>
+
             </div>
           </div>
           <div class="col-md-4">

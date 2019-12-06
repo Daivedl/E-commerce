@@ -1,12 +1,6 @@
 <?php
 session_start();
-require_once("./libs/Mobile_Detect.php");
-$detect = new Mobile_Detect();
-if ($detect->isMobile()) {
-  $logo = 20;
-} else {
-  $logo = 35;
-}
+
 ?>
 <!doctype html>
 <html lang="en">
