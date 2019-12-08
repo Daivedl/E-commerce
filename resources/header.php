@@ -1,10 +1,10 @@
 <?php
 
 if (isset($_SESSION["login"]) && $_SESSION["login"] == true) { //buscamos la imagen del usuario
-    if (file_exists("../base/" . $_SESSION["username"] . ".png") == true) {
-        $perfil = "../base/" . $_SESSION["username"] . ".png";
+    if (file_exists("./base/" . $_SESSION["username"] . ".png") == true) {
+        $perfil = "./base/" . $_SESSION["username"] . ".png";
     } else {
-        $perfil = "../base/default.png";
+        $perfil = "./base/default.png";
     }
 }
 
@@ -29,7 +29,7 @@ if (isset($_SESSION["login"]) && $_SESSION["login"] == true) { //buscamos la ima
 
             <?php
 
-             if (!isset($_SESSION["login"]) || $_SESSION["login"] == false) : ?>
+            if (!isset($_SESSION["login"]) || $_SESSION["login"] == false) : ?>
                 <li class="nav-item">
                     <a href="registro.php" class="nav-link">Registro</a>
                 </li>
@@ -44,36 +44,36 @@ if (isset($_SESSION["login"]) && $_SESSION["login"] == true) { //buscamos la ima
         <form class="form-inline my-2 my-lg-0 ml-auto">
 
 
-       <nav class="navbar navbar-dark navbar-expand-sm">
-         <?php if (isset($_SESSION["login"]) && $_SESSION["login"] == true) : ?>
+            <nav class="navbar navbar-dark navbar-expand-sm">
+                <?php if (isset($_SESSION["login"]) && $_SESSION["login"] == true) : ?>
 
-                 <h6 class="text-center m-0">
-                     <?= $_SESSION["username"] ?>
-                 </h6>
-  <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbar-list-4">
-    <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="<?= $perfil ?>" alt="" width="30" height="30" class="ml-3 rounded-circle">
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="index.php">Home</a>
-          <a class="dropdown-item" href="#">Editar perfil</a>
-          <a class="dropdown-item" href="logout.php">Log Out</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</nav>
+                    <h6 class="text-center m-0">
+                        <?= $_SESSION["username"] ?>
+                    </h6>
+                    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar-list-4">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="<?= $perfil ?>" alt="" width="30" height="30" class="ml-3 rounded-circle">
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="index.php">Home</a>
+                                    <a class="dropdown-item" href="#">Editar perfil</a>
+                                    <a class="dropdown-item" href="logout.php">Log Out</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+            </nav>
 
-            <?php endif;  ?>
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar" />
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
-                Buscar
-            </button>
+        <?php endif;  ?>
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar" />
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+            Buscar
+        </button>
         </form>
     </div>
 </nav>

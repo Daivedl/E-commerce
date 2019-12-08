@@ -57,7 +57,7 @@ if ($_SESSION["login"] == true) { //redirigimos al usuario al index
     <title>Login</title>
 </head>
 
-<body class="container">
+<body class="container-fluid">
     <!--header -->
     <header>
         <?php include_once("./resources/header.php"); ?>
@@ -85,12 +85,12 @@ if ($_SESSION["login"] == true) { //redirigimos al usuario al index
         <?php endif; ?>
         <?php if ($error["email"] == true) : ?>
             <div class="alert alert-danger text-center ml-auto mr-auto" role="alert">
-            <p>Ese email no está registrado en el sitio.</p>
+                <p>Ese email no está registrado en el sitio.</p>
             </div>
         <?php endif; ?>
         <?php if ($error["username"] == true) : ?>
             <div class="alert alert-danger text-center ml-auto mr-auto" role="alert">
-            <p>Error en el nombre de usuario.</p>
+                <p>Error en el nombre de usuario.</p>
             </div>
         <?php endif; ?>
     </div>

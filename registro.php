@@ -112,7 +112,7 @@ if ($_SESSION["login"] == true) { //redirigimos al usuario al index
         <?php include_once("./resources/header.php"); ?>
     </header>
     <!--Inicio formulario de registro -->
-    <div class="row">
+    <div class="row container-fluid">
         <div class="col-xl-8 offset-xl-2 py-5">
             <form id="registro" method="post" action="registro.php" role="form" enctype="multipart/form-data">
                 <div class="row">
