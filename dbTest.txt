@@ -1,0 +1,53 @@
+CREATE TABLE usuarios(
+ID INT  PRIMARYKEY AUTO_INCREMENT,
+NOMBRE VARCHAR(50) NOT NULL,
+APELLIDO VARCHAR(50) NOT NULL,
+EMAIL VARCHAR(50) UNIQUE,
+DIRECCION VARCHAR(100) );
+
+INSERT INTO usuarios (NOMBRE,APELLIDO,EMAIL)
+VALUES ('Facu','Facu','facu@gmail.com'),
+('Facu1','Facu','facu@gmail.com'),
+('Facu2','Facu','facu@gmail.com'),
+('Facu3','Facu','facu@gmail.com'),
+('Facu4','Facu','facu@gmail.com');
+('Facu323','Facu','facu@gmail.com');
+('Facu32','Facu','facu@gmail.com');
+('Facu12','Facu','facu@gmail.com');
+
+
+CREATE TABLE ciudad (
+IDCiudad  INT PRIMARY KEY,
+nombreCiudad VARCHAR(15),
+IDProvincia FOREIGN KEY);
+
+CREATE TABLE provincia(
+IDProvincia INT PRIMARY KEY ,
+NombreProvincia VARCHAR(50),
+IDPais FOREIGN KEY);
+
+CREATE TABLE Pais(
+IDPais INT PRIMARY KEY,
+nombrePais VARCHAR(50));
+
+INSERT INTO ciudad (IDCiudad,NombreCiudad,IDProvincia) VALUES 
+(1,'CABA',1), (2,'Rosario',5),(3,'Santa Rosa', 8), (71,'Barcelona',96),
+(12,'Carmelo',75),(15,'Montevideo',77);
+
+INSERT INTO provincia (IDProvincia,nombreProvincia,IDPais) VALUES 
+(1,'CABA',54),(5,'Santa Fe',54),(8,'La Pampa',54),(96,'Cataluña',34),(75,'Colonia',598),(77,'Montevideo',578);
+
+INSERT INTO pais (IDPais,nombrePais) VALUES 
+(54,'Argentina'),(598,'Uruguay),(34,'España'),(49,'Alemania');
+
+
+ALTER TABLE usuarios ADD Ciudades VARCHAR(50);
+
+UPDATE usuarios SET Ciudades = 'Colonia' WHERE ID=1;
+UPDATE usuarios SET Ciudade  = 'Santa Rosa' WHERE ID>2;
+
+
+
+
+
+
