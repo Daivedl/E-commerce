@@ -60,9 +60,8 @@ if (isset($_SESSION["login"]) && $_SESSION["login"] == true) { //buscamos la ima
                                     <img src="<?= $perfil ?>" alt="" width="30" height="30" class="ml-3 rounded-circle">
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="index.php">Home</a>
                                     <a class="dropdown-item" href="#">Editar perfil</a>
-                                    <a class="dropdown-item" href="logout.php">Log Out</a>
+                                    <a class="dropdown-item" href="./resources/logout.php">Log Out</a>
                                 </div>
                             </li>
                         </ul>
